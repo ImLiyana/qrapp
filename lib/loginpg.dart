@@ -1,6 +1,8 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:qrapp/qrpage.dart';
+import 'package:qrapp/registerpg.dart';
 
 class Login extends StatefulWidget {
   const Login({Key? key}) : super(key: key);
@@ -34,7 +36,12 @@ class _LoginState extends State<Login> {
             hintText: 'Enter password',
           ),),
           SizedBox(height: 30,),
-       ElevatedButton(onPressed:(){}, child:Text('login'),style: ElevatedButton.styleFrom(
+       ElevatedButton(onPressed:(){
+         Navigator.push(
+           context,
+           MaterialPageRoute(builder: (context) => const Qrpage()),
+         );
+       }, child:Text('login'),style: ElevatedButton.styleFrom(
          primary: Colors.teal,
          side: BorderSide(
            width: 3.0,
@@ -42,7 +49,20 @@ class _LoginState extends State<Login> {
          ),
        ),),
         SizedBox(height: 30,),
-        Text('Dont have an account?Register',style:TextStyle(color:Colors.white,),),
+
+
+          Row(
+            children:  [
+              Text('Dont have an account?',style:TextStyle(color:Colors.white,)),
+              TextButton(onPressed: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const register()),
+                );
+
+              }, child: Text('regster')),
+            ],
+          )
         ],
       ),
       );
