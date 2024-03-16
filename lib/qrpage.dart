@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:qr_flutter/qr_flutter.dart';
 import 'package:qrapp/camerascn.dart';
+import 'package:qrapp/trial.dart';
 class Qrpage extends StatefulWidget {
   const Qrpage({Key? key}) : super(key: key);
 
@@ -32,7 +33,7 @@ class _QrpageState extends State<Qrpage> {
 
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => const Scan()),
+                MaterialPageRoute(builder: (context) => const Try()),
               );
             }, child: Text('scan'),
               style: ElevatedButton.styleFrom(
