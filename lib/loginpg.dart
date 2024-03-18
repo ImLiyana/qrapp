@@ -30,7 +30,6 @@ class _LoginState extends State<Login> {
      })
    );
    var decodeData=jsonDecode(response.body);
-   print(decodeData);
    if(response.statusCode==200){
      Navigator.push(
        context,
